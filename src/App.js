@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react' ;
 import './App.css';
 import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image'
 
 class App extends React.Component {
   constructor(props) {
@@ -46,6 +47,8 @@ class App extends React.Component {
       <Container>
       <h2>here is the map for {this.state.locationObj.display_name} </h2>
       <p>Lat/Lon: {this.state.locationObj.lat}, {this.state.locationObj.lon}</p>
+      <Image scr={`https://maps.locationiq.com/v3/staticmap?key=${process.env.
+    REACT_APP_LOCATIONIQ_KEY}&center=${this.state.locationObj.lat},${this.state.locationObj.lon}&zoom=12`}alt={this.state.locationObj.display_name}/>
       </Container>
        }
       </div>
