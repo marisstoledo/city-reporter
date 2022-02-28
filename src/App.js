@@ -58,7 +58,7 @@ class App extends React.Component {
        <Container className='container' >
       <h2>here is the map for {this.state.locationObj.display_name} </h2>
       <p>Lat/Lon: {this.state.locationObj.lat}, {this.state.locationObj.lon}</p>
-      <Image className='map' roundedCirlce scr={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.locationObj.lat},${this.state.locationObj.lon}&zoom=12`}alt={this.state.locationObj.display_name}/>
+      <Image className='map' roundedCircle scr={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.locationObj.lat},${this.state.locationObj.lon}&zoom=12&format=jpg`} alt={this.state.locationObj.display_name}/>
       </Container>
        }
 
