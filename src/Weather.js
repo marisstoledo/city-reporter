@@ -10,7 +10,7 @@ class Weather extends React.Component {
             <Row md={3}>
             {this.props.weatherArr.map((dayObj, idx) => (
             <Col key={idx}>
-                <Card classname="forecast">
+                <Card className="forecast">
             <Card.Text>Date: {dayObj.day}</Card.Text>
             <Card.Text>forecast Description: {dayObj.description}</Card.Text>
             </Card>
