@@ -52,11 +52,9 @@ class App extends React.Component {
         weatherArr: response.data
       });
     } catch(error) {
-      let response = await axios.get(url);
-      console.log(errorResponse);
       this.setState({
         showError: true,
-        errorMessage: errorResponse.data
+        // errorMessage: Response.data
       })
     }
   }
