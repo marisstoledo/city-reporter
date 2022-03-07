@@ -35,6 +35,7 @@ class App extends React.Component {
     locationObj: response.data[0]
     });
     this.getWeather();
+    this.getMovies();
    } catch(error){
      this.setState({
         showError:true,
@@ -59,6 +60,22 @@ class App extends React.Component {
     }
   }
 
+  getMovies = async () => {
+    const url = `http://localhost:3001/movies?searchQuery=${this.state.city}`
+    try {
+      let response = await axios.get(url);
+      console.log('Movies response: ', response.data);
+      this.setState({
+        moviesArr: response.data
+      });
+    } catch(error) {
+      this.setState({
+        showError: true,
+        // errorMessage: Response.data
+      })
+    }
+  }
+  
 
   render() {
     return (
