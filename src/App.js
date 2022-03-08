@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Alert from 'react-bootstrap/Alert';
 import Weather from './Weather';
+import Movies from './Movies';
 
 class App extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class App extends React.Component {
   }
 
   getWeather = async () => {
-    const url = `http://localhost:3001/weather?lat=${this.state.locationObj.lat}&lon=${this.state.locationObj.lon}&searchQuery=${this.state.city}`
+    const url = `${proccess.env.SERVER}/weather?lat=${this.state.locationObj.lat}&lon=${this.state.locationObj.lon}&searchQuery=${this.state.city}`
     try {
       let response = await axios.get(url);
       console.log('Weather response: ', response.data);
@@ -61,7 +62,7 @@ class App extends React.Component {
   }
 
   getMovies = async () => {
-    const url = `http://localhost:3001/movies?searchQuery=${this.state.city}`
+    const url = `${proccess.env.SERVER}/movies?searchQuery=${this.state.city}`
     try {
       let response = await axios.get(url);
       console.log('Movies response: ', response.data);
@@ -101,6 +102,7 @@ class App extends React.Component {
               alt={this.state.locationObj.display_name}/>
 
               <Weather weatherArr={this.state.weatherArr}/>
+              <Movies moviesArr={this.state.moviesArr}/>
       {/* <Image className='map' roundedCircle scr={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.locationObj.lat},${this.state.locationObj.lon}&zoom=12&format=jpg`} alt={this.state.locationObj.display_name}/> */}
       </Container>
        }
