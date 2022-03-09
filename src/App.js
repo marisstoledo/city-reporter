@@ -5,7 +5,6 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Alert from 'react-bootstrap/Alert';
 import Weather from './Weather';
-// import Movies from './Movies';
 
 class App extends React.Component {
   constructor(props) {
@@ -36,11 +35,9 @@ class App extends React.Component {
     locationObj: response.data[0]
     });
     this.getWeather();
-    // this.getMovies();
    } catch(error){
      this.setState({
         showError:true,
-        // errorMessage: error.response.status +':' + error.response.data.error
      })
    }
   }
@@ -56,26 +53,9 @@ class App extends React.Component {
     } catch(error) {
       this.setState({
         showError: true,
-        // errorMessage: Response.data
       })
     }
   }
-
-  // getMovies = async () => {
-  //   const url = `${process.env.SERVER}/movies?searchQuery=${this.state.city}`
-  //   try {
-  //     let response = await axios.get(url);
-  //     console.log('Movies response: ', response.data);
-  //     this.setState({
-  //       moviesArr: response.data
-  //     });
-  //   } catch(error) {
-  //     this.setState({
-  //       showError: true,
-  //       // errorMessage: Response.data
-  //     })
-  //   }
-  // }
   
 
   render() {
@@ -102,8 +82,6 @@ class App extends React.Component {
               alt={this.state.locationObj.display_name}/>
 
               <Weather weatherArr={this.state.weatherArr}/>
-              {/* <Movies moviesArr={this.state.moviesArr}/> */}
-      {/* <Image className='map' roundedCircle scr={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.locationObj.lat},${this.state.locationObj.lon}&zoom=12&format=jpg`} alt={this.state.locationObj.display_name}/> */}
       </Container>
        }
 
