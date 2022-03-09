@@ -36,11 +36,11 @@ class App extends React.Component {
     locationObj: response.data[0]
     });
     this.getWeather();
-    this.getMovies();
+    // this.getMovies();
    } catch(error){
      this.setState({
         showError:true,
-        errorMessage: error.response.status +':' + error.response.data.error
+        // errorMessage: error.response.status +':' + error.response.data.error
      })
    }
   }
