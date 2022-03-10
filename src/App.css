@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: lightslategrey;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
 }
 
 .form {
-background-color: beige;
+background-color: lightpink;
 }
 
 .container {
@@ -22,5 +22,5 @@ background-color: beige;
 }
 
 .map{
-  border:2px solid cadetblue;
+  border:2px solid rgb(162, 135, 211);
 }
